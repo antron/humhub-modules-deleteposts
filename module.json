@@ -1,0 +1,11 @@
+{
+    "id": "deleteposts",
+    "name": "Delete Posts",
+    "description": "",
+    "keywords": [],
+    "version": "0.0.1",
+    "humhub": {
+        "minVersion": "1.3.0"
+    },
+    "screenshots": ["assets/module_image.png"]
+}
