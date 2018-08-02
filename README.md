@@ -1,1 +1,0 @@
-# humhub-modules-deleteposts
