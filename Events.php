@@ -8,8 +8,12 @@ use humhub\models\Setting;
 class Events
 {
 
-    public static function onCronRun()
+    public static function onCronRun($event)
     {
+        $controller = $event->sender;
+        
+        $controller->stdout("Deleting old Posts... ");
+        
         if (Yii::$app->controller->action->id == 'daily') {
 
             $days = '-' . Setting::Get('daysOfStore', 'deleteposts') . ' days';
@@ -24,6 +28,8 @@ class Events
                 $post->delete();
             }
         }
+        
+        $controller->stdout('done.' . PHP_EOL, \yii\helpers\Console::FG_GREEN);
     }
 
 }
